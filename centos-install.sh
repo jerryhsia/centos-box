@@ -3,7 +3,7 @@
 init() {
     yum install -y zsh tree zip net-tools bind-utils vim lsof curl wget git lrzsz sysstat strace telnet tcpdump
     yum install -y php mysql
-    # yum install -y go nginx redis java-11-openjdk
+    yum install -y go nginx redis java-11-openjdk
 }
 
 install_zsh() {
