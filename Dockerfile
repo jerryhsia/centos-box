@@ -1,6 +1,10 @@
-FROM centos:8
+FROM centos:centos7
 
+USER root
 WORKDIR /root
 
-COPY centos-install.sh /root/
-RUN ./centos-install.sh 2>&1
+COPY install.sh /tmp
+COPY update-baidu-yum-source.sh /usr/local/bin
+RUN /tmp/install.sh && rm -rf /tmp/install.sh 2>&1
+
+ENTRYPOINT ["/usr/sbin/init"]
